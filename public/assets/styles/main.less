@@ -1,0 +1,286 @@
+@main_color: #227ed6;
+
+body{
+	font-family: "AvenirNextL";
+}
+
+a{
+	color: @main_color;
+}
+
+.btn{
+	margin-top: 10px;
+	background: @main_color;
+}
+
+.btn:hover, .btn:focus{
+	opacity: .9;
+	color: #FFF;
+	background: @main_color;
+}
+
+* .clear{
+	clear: both;
+}
+
+* .popup-overlay{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0; left: 0; z-index: 100;
+	background: rgba(0, 0, 0, 0.8);
+	display: none;
+}
+
+.container{
+	width: 100%;
+	max-width: 100%;
+	padding: 0 10px;
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	padding: 0 10px;
+}
+
+.loading-page{
+	width: 100px;
+	height: 100px;
+	margin-top: calc(~"50vh - 50px");
+	margin-left: calc(~"50% - 50px");
+}
+
+.page_title{
+	font-size: 25px;
+	font-family: 'DW-Bosk';
+	margin: 0;
+	margin-top: 15px;
+}
+
+//Header
+#main-header{
+	width: 100%;
+	background: @main_color;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 101;
+
+	.container{
+		width: 100%;
+		max-width: 100%;
+		padding: 0 7.5px;
+
+		.row{
+			margin: 0;
+
+			.logo{
+				height: 45px;
+				padding: 7.5px 0;
+				a{
+					margin-left: 5px;
+					img{
+						height: 45px;
+					}
+				}
+			}
+
+			.questions{
+				text-align: right;
+				height: 60px;
+				color: #FFF;
+				line-height: 60px;
+				font-size: 25px;
+			}
+		}
+	}
+}
+
+//Content
+#main-content{
+	width: 100%;
+	margin-top: 60px;
+	padding: 10px 0;
+
+	#news{
+		width: 100%;
+
+		.news{
+			width: 100%;
+			margin: 10px 0;
+
+			.title{
+				font-size: 25px;
+				font-family: 'DW-Bosk';
+				line-height: 25px;
+				margin: 0;
+				color: @main_color;
+			}
+
+			.info{
+				display: block;
+				font-size: 12px;
+				margin: 5px 0;
+				color: @main_color;
+				opacity: .7;
+			}
+
+			p{
+				font-family: 'AvenirNextL';
+				opacity: 0.7;
+			}
+		}
+	}
+
+	#index{
+		width: 100%;
+
+		.index-btn{
+			display: block;
+			height: 200px;
+			margin-bottom: 10px;
+
+			.overlay{
+				width: 100%;
+				height: 100%;
+				background: #CCC;
+				background-size: 100%;
+				color: #FFF;
+				font-family: "DW-Bosk";
+
+				h1{
+					font-size: 45px;
+					margin-top: 144px;
+					margin-left: 10px;
+				}
+			}
+
+			.overlay#news{
+				background: url("../img/news.png");
+				background-size: 100%;
+			}
+
+			.overlay#program{
+				background: url("../img/program.png");
+				background-size: 100%;
+			}
+
+			.overlay#lectours{
+				background: url("../img/lectours.png");
+				background-size: 100%;
+			}
+
+			.overlay#exhibitors{
+				background: url("../img/exhibitors.png");
+				background-size: 100%;
+			}
+		}
+	}
+}
+
+//FOOTER
+#main-footer{
+	width: 100%;
+	margin-top: -10px;
+	text-align: center;
+
+	a{
+		color: @main_color;
+	}
+
+	p{
+		opacity: .7;
+	}
+}
+
+//Logged
+#logged{
+	width: 100%;
+	height: 40px;
+	background: #FFF;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 101;
+	-webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.5);
+
+	.name{
+		line-height: 40px;
+		font-family: 'AvenirNextL';
+	}
+
+	.control{
+		line-height: 40px;
+		text-align: right;
+		font-size: 25px;
+
+		.dropdown-content{
+			//max-width: 85%;
+			right: 10px;
+			width: 200px !important;
+
+			a{
+				color: @main_color;
+			}
+
+			hr{
+				margin: 0;
+			}
+		}
+	}
+}
+
+#questions{
+	width: 100%;
+	height: 100vh;
+	background: rgba(49, 112, 200, 0.96);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	padding: 25px;
+	display: none;
+
+	.fa-times{
+		float: right;
+		font-size: 35px;
+		color: #FFF;
+		right: 40px;
+		top: 40px;
+		cursor: pointer;
+		position: absolute;
+		z-index: 1500;
+	}
+
+	.content{
+		width: 100%;
+		margin-top: 5px;
+
+		.page_title{
+			font-size: 30px;
+			color: #FFF;
+		}
+
+		.btn{
+			width: 100%;
+			text-transform: none;
+			background: #FFF;
+			color: #000;
+		}
+
+		.input-field{
+			margin-top: 25px;
+
+			input, textarea{
+				border-bottom: 1px rgba(255,255,255,0.8) solid;
+				color: #FFF;
+			}
+
+			label{
+				color: #FFF;
+				opacity: .8;
+			}
+		}
+	}
+}

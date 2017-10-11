@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'DW-Bosk';
+    src: url('../fonts/Bosk-DW.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'AvenirNextB';
+    src: url('../fonts/AvenirNextBgCyr-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AvenirNextBgCyr-Bold.woff') format('woff'), url('../fonts/AvenirNextBgCyr-Bold.svg#AvenirNextBgCyr-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNextM';
+    src: url('../fonts/AvenirNextBgCyr-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AvenirNextBgCyr-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirNextL';
+    src: url('../fonts/AvenirNextBgCyr-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AvenirNextBgCyr-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
