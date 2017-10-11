@@ -11,6 +11,24 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::resource('/news', 'NewsController');
+
+Route::post('/question', 'QuestionController@store');
+
+Route::get('/schedule', function () {
+    return view('schedule.index');
+});
+
+Route::get('/exhibitors', function () {
+    return view('exhibitors.index');
+});
+
+Route::get('/lectours', function () {
+    return view('lectours.index');
 });
