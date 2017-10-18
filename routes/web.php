@@ -11,24 +11,28 @@
 |
 */
 
+//Auth
 Auth::routes();
 
+//Home
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/news', 'NewsController');
+//News User
+Route::get('/news', 'NewsController@index');
+Route::get('/news/{id}', 'NewsController@show');
+//News Admin
+Route::get('/admin/news', 'NewsController@admin_index');
+Route::get('/admin/news/create', 'NewsController@create');
+Route::post('/admin/news/', 'NewsController@store');
+Route::get('/admin/news/{id}', 'NewsController@edit');
+Route::put('admin/news/{id}', 'NewsController@update');
+Route::delete('admin/news/{id}', 'NewsController@destroy');
 
-Route::post('/question', 'QuestionController@store');
-
-Route::get('/schedule', function () {
-    return view('schedule.index');
-});
-
-Route::get('/exhibitors', function () {
-    return view('exhibitors.index');
-});
-
-Route::get('/lectours', function () {
-    return view('lectours.index');
-});
+//Live User
+Route::post('/live/question', 'LiveController@store_question');
+Route::post('/live/manager', 'LiveController@live_manage');
+Route::get('/live/{ajax?}', 'LiveController@index');
+//Live Admin
+Route::get('admin/live/', 'LiveController@live');

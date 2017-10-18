@@ -5,8 +5,10 @@ a {
   color: #227ed6;
 }
 .btn {
-  margin-top: 10px;
+  text-transform: none;
   background: #227ed6;
+  border: none;
+  line-height: 38px;
 }
 .btn:hover,
 .btn:focus {
@@ -92,6 +94,46 @@ a {
   font-size: 25px;
   font-family: 'DW-Bosk';
   margin: 0;
+  margin-top: 5px;
+}
+.page_title.big {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+.panel-primary {
+  border-color: #227ed6;
+}
+.panel-primary .panel-heading {
+  background: #227ed6;
+  border-color: #227ed6;
+}
+.delete-form {
+  display: inline;
+}
+.btn-delete,
+.btn-delete:focus {
+  text-align: left;
+  color: red;
+  display: inline;
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.panel-primary .table-area {
+  overflow-x: scroll;
+}
+.panel-primary .table-area .table {
+  margin-bottom: 0;
+}
+.panel-primary .table-area .table td {
+  border-radius: 0;
+}
+.panel-primary .table-area .table th {
+  font-family: 'AvenirNextM';
+}
+.refresh-info {
+  margin-bottom: 0;
   margin-top: 15px;
 }
 #main-header {
@@ -282,4 +324,69 @@ a {
 #questions .content .input-field label {
   color: #FFF;
   opacity: .8;
+}
+#live-element {
+  width: 100%;
+  padding: 0 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+#live-element .name {
+  width: 100%;
+  margin: 0;
+  font-family: 'DW-Bosk';
+  font-size: 40px;
+  color: #227ed6;
+}
+#live-element .question {
+  font-size: 25px;
+  font-family: 'AvenirNextB';
+  text-transform: uppercase;
+  color: #227ed6;
+  opacity: .7;
+}
+#live-element .min-text {
+  font-size: 16px;
+  font-family: 'AvenirNextB';
+  color: #227ed6;
+  margin-top: 15px;
+}
+.live {
+  background: red;
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-animation: live_bg 1s infinite;
+  /* Safari 4.0 - 8.0 */
+  animation: live_bg 1s infinite;
+}
+.live .btn-delete {
+  color: #FFF;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes live_bg {
+  0% {
+    background: #FF6666;
+  }
+  50% {
+    background: rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    background: #FF6666;
+  }
+}
+@keyframes live_bg {
+  0% {
+    background: #FF6666;
+  }
+  50% {
+    background: rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    background: #FF6666;
+  }
 }

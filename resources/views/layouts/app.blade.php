@@ -16,6 +16,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/materialize/css/materialize.min.css') }}"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/styles/main.css') }}">
+
+    <script src="{{ asset('tinymce/tinymce.min.js') }}"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 </head>
 <body>
     <header id="main-header">
@@ -73,11 +76,12 @@
                     <!-- Dropdown Structure -->
                     <ul id="admin-control-dd" class="dropdown-content">
                         <li><a href="{{ url('/') }}">Начало</a></li>
-                        <li><a href="{{ url('/news') }}">Управление на новини</a></li>
+                        <li><a href="{{ url('admin/news') }}">Управление на новини</a></li>
                         <li><a href="{{ url('/lectours') }}">Управление на лектори</a></li>
-                        <li><a href="{{ url('/control') }}">Управление на прожекционен екран</a></li>
+                        <li><a href="{{ url('admin/live') }}">Управление на прожекционен екран</a></li>
                         <hr/>
-                        <li><a href="#!">Изход</a></li>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Изход</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
                     </ul>
                 </div>
             </div>
@@ -90,16 +94,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page_title">Задай въпрос</h1>
+                        <h1 class="page_title" style="margin-top: 10px;">Задай въпрос</h1>
                         <div class="alert_box"></div>
                         <form id="questions_form" style="margin-top: 40px;">
                             <div class="input-field">
-                                <input type="text" class="names validate" placeholder="Пример: Иван Иванов">
-                                <label for="first_name">Вашето име:</label>
+                                <input type="text" class="names validate" placeholder="Иван Иванов">
+                                <label for="first_name">Име</label>
                             </div>
                             <div class="input-field">
-                                <textarea class="question_data materialize-textarea" placeholder="Вашият въпрос: Здравейте, може ли да ви попитам...?"></textarea>
-                                <label for="first_name">Вашият въпрос:</label>
+                                <textarea class="question_data materialize-textarea" placeholder="Здравейте, може ли да ви попитам...?"></textarea>
+                                <label for="first_name">Въпрос</label>
                             </div>
                             <button class="btn">Изпрати въпроса</button>
                         </form>
