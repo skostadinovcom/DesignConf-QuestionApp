@@ -21,7 +21,7 @@
         </a>
     </div>
     <div class="index-btn col-md-3 col-sm-6 col-xs-12">
-        <a href="{{ url('lectours') }}" class="overlay waves-effect" id="lectours">
+        <a href="{{ url('speakers') }}" class="overlay waves-effect" id="lectours">
             <h1>Лектори</h1>
         </a>
     </div>

@@ -15,13 +15,19 @@ class NewsController extends Controller
      */
     public function index()
     {
-        if ( Auth::check() ){
-            $news = News::get();
-        }else{
-            $news = News::where('public', 1)->get();
-        }
-
+        $news = News::where('public', 1)->orderBy('id', 'DESC')->get();
         return view('news.index', ['news' => $news]);
+    }
+
+    /**
+     * Display a listing of the resource on admin panel.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function admin_index()
+    {
+        $news = News::orderBy('id', 'DESC')->get();
+        return view('news.admin_index', ['news' => $news]);
     }
 
     /**
@@ -31,12 +37,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        if ( !Auth::check() ){
-            return redirect('/')->with( 'message', ['type' => 'danger', 'msg' => 'Вие нямате права.'] );
-            exit();
-        }
-
-        return view('news.create');
+        return view('news.admin_create');
     }
 
     /**
@@ -47,11 +48,6 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        if ( !Auth::check() ){
-            return redirect('/')->with( 'message', ['type' => 'danger', 'msg' => 'Вие нямате права.'] );
-            exit();
-        }
-
         $request->validate([
             'title' => 'required',
             'desc' => 'required',
@@ -68,7 +64,7 @@ class NewsController extends Controller
         $post->public = $request->status;
         $post->save();
 
-        return redirect( url('news/') )->with( 'message', ['type' => 'success', 'msg' => 'Успешно добавихте публикацията' ] );
+        return redirect( url('admin/news/') )->with( 'message', ['type' => 'success', 'msg' => 'Успешно добавихте публикацията' ] );
     }
 
     /**
@@ -80,7 +76,6 @@ class NewsController extends Controller
     public function show($id)
     {
         $post = News::where('id', $id)->first();
-
         return view('news.show', ['post' => $post]);
     }
 
@@ -93,8 +88,7 @@ class NewsController extends Controller
     public function edit($id)
     {
         $post = News::where('id', $id)->first();
-
-        return view('news.edit', ['post' => $post]);
+        return view('news.admin_edit', ['post' => $post]);
     }
 
     /**
@@ -106,11 +100,6 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ( !Auth::check() ){
-            return redirect('/')->with( 'message', ['type' => 'danger', 'msg' => 'Вие нямате права.'] );
-            exit();
-        }
-
         $request->validate([
             'title' => 'required',
             'desc' => 'required',
@@ -127,7 +116,7 @@ class NewsController extends Controller
         $post->public = $request->status;
         $post->save();
 
-        return redirect( url('news/' . $id . '/edit' ) )->with( 'message', ['type' => 'success', 'msg' => 'Вие успешно редактирахте публикацията' ] );
+        return redirect( url('admin/news/' . $id . '/' ) )->with( 'message', ['type' => 'success', 'msg' => 'Вие успешно редактирахте публикацията' ] );
     }
 
     /**
@@ -140,8 +129,7 @@ class NewsController extends Controller
     {
         if ( Auth::check() ){
             News::destroy($id);
-
-            return redirect(url('news'))->with( 'message', ['type' => 'success', 'msg' => 'Успешно изтрихте новината.'] );
+            return redirect(url('admin/news'))->with( 'message', ['type' => 'success', 'msg' => 'Успешно изтрихте новината.'] );
         }
     }
 }
