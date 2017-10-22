@@ -26,11 +26,6 @@ class NewsController extends Controller
      */
     public function admin_index()
     {
-        if ( !Auth::check() ){
-            return redirect('/')->with( 'message', ['type' => 'danger', 'msg' => 'Вие нямате права.'] );
-            exit();
-        }
-
         $news = News::orderBy('id', 'DESC')->get();
         return view('news.admin_index', ['news' => $news]);
     }
@@ -42,11 +37,6 @@ class NewsController extends Controller
      */
     public function create()
     {
-        if ( !Auth::check() ){
-            return redirect('/')->with( 'message', ['type' => 'danger', 'msg' => 'Вие нямате права.'] );
-            exit();
-        }
-
         return view('news.admin_create');
     }
 
@@ -58,11 +48,6 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        if ( !Auth::check() ){
-            return redirect('/')->with( 'message', ['type' => 'danger', 'msg' => 'Вие нямате права.'] );
-            exit();
-        }
-
         $request->validate([
             'title' => 'required',
             'desc' => 'required',
@@ -102,11 +87,6 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        if ( !Auth::check() ){
-            return redirect('/')->with( 'message', ['type' => 'danger', 'msg' => 'Вие нямате права.'] );
-            exit();
-        }
-
         $post = News::where('id', $id)->first();
         return view('news.admin_edit', ['post' => $post]);
     }
@@ -120,11 +100,6 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ( !Auth::check() ){
-            return redirect('/')->with( 'message', ['type' => 'danger', 'msg' => 'Вие нямате права.'] );
-            exit();
-        }
-
         $request->validate([
             'title' => 'required',
             'desc' => 'required',
@@ -154,7 +129,6 @@ class NewsController extends Controller
     {
         if ( Auth::check() ){
             News::destroy($id);
-
             return redirect(url('admin/news'))->with( 'message', ['type' => 'success', 'msg' => 'Успешно изтрихте новината.'] );
         }
     }

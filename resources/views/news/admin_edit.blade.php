@@ -28,7 +28,7 @@
                         </div>
                         <div class="input-field" style="margin-top: 25px;">
                             <span style="font-size: 10px;">Полето чете и HTML</span>
-                            <textarea id="post_content" class="materialize-textarea" placeholder="Пример: Хора от Севлиево организират Design Conf за първи път..." name="desc">{!! $post->content !!}</textarea>
+                            <textarea id="post_content" class="materialize-textarea editor" placeholder="Пример: Хора от Севлиево организират Design Conf за първи път..." name="desc">{!! $post->content !!}</textarea>
                             <label for="post_content">Съдържание на публикацията:</label>
                         </div>
                         <div>

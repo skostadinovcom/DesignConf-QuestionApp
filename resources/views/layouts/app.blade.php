@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/styles/main.css') }}">
 
     <script src="{{ asset('tinymce/tinymce.min.js') }}"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script>tinymce.init({ selector:'textarea.editor' });</script>
 </head>
 <body>
     <header id="main-header">
@@ -77,7 +77,7 @@
                     <ul id="admin-control-dd" class="dropdown-content">
                         <li><a href="{{ url('/') }}">Начало</a></li>
                         <li><a href="{{ url('admin/news') }}">Управление на новини</a></li>
-                        <li><a href="{{ url('/lectours') }}">Управление на лектори</a></li>
+                        <li><a href="{{ url('admin/speakers') }}">Управление на лектори</a></li>
                         <li><a href="{{ url('admin/live') }}">Управление на прожекционен екран</a></li>
                         <hr/>
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Изход</a></li>
