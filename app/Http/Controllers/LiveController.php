@@ -60,7 +60,7 @@ class LiveController extends Controller
         $questions = Questions::orderBy('id', 'desc')->get();
         $settings = Settings::where('setting', 'live_screen')->first();
 
-        return view('live.admin_news', ['questions' => $questions, 'settings' => $settings]);
+        return view('live.admin', ['questions' => $questions, 'settings' => $settings]);
     }
 
     public function live_manage(Request $request)

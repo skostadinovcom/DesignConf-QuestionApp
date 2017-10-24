@@ -30,12 +30,12 @@ $( document ).ready(function( evt ) {
                     if ( status === 'success'){
                         element.find('.names').val('');
                         element.find('.question_data').val('');
-                        element.append('<div class="alert alert-success" style="margin-top: 30px;">Вие успешно зададохте вашият въпрос. След като той бъде одобрен ще бъде показан на стената.</div>');
+                        element.find('.alerts').prepend('<div class="alert alert-success" style="margin-top: 30px;">Вие успешно изпратихте своя въпрос. След като той бъде одобрен ще бъде показан на стената.</div>');
                     }
                 }
             );
         }else{
-            element.append('<div class="alert alert-danger" style="margin-top: 30px;">Хей, не се опитвай да ни измамиш! Попълни полетата и опитай пак...</div>');
+            element.find('.alerts').prepend('<div class="alert alert-danger" style="margin-top: 30px;">Хей, не се опитвай да ни измамиш! Попълни всички полета и опитай пак...</div>');
         }
     });
 

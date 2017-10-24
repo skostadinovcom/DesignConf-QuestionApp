@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_title', 'Добавяне на новина')
+@section('page_title', 'Редактиране на новина: ' . $post->title )
 
 @section('content')
     <section id="news">

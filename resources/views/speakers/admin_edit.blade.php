@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_title', 'Добавяне на лектор')
+@section('page_title', 'Редактиране на лектор: ' . $speaker->names )
 
 @section('content')
     <section id="news">

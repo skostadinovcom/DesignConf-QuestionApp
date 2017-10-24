@@ -17,6 +17,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/materialize/css/materialize.min.css') }}"  media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/styles/main.css') }}">
 
+    <!-- FAV -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon/favicon-16x16.png') }}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon/favicon-32x32.png') }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon/favicon-96x96.png') }}" sizes="96x96">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon/favicon-194x194.png') }}" sizes="194x194">
+
     <script src="{{ asset('tinymce/tinymce.min.js') }}"></script>
     <script>tinymce.init({ selector:'textarea.editor' });</script>
 </head>
@@ -106,6 +112,7 @@
                                 <label for="first_name">Въпрос</label>
                             </div>
                             <button class="btn">Изпрати въпроса</button>
+                            <div class="alerts"></div>
                         </form>
                     </div>
                 </div>

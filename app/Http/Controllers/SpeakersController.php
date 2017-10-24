@@ -67,7 +67,9 @@ class SpeakersController extends Controller
         if ( $request->hasFile('picture') ){
             $picture = $request->file('picture');
             $filename = time() . rand(0,999) . '.' . $picture->getClientOriginalExtension();
-            Image::make($picture)->resize(500,500)->save( public_path('uploads/speakers/' . $filename) );
+            $path = public_path('uploads/speakers/' . $filename);
+            Image::make($picture->getRealPath())->resize(500,500)->save( $path );
+
         }
 
         $speaker = new Speakers;
@@ -135,7 +137,8 @@ class SpeakersController extends Controller
         if ( $request->hasFile('picture') ){
             $picture = $request->file('picture');
             $filename = time() . rand(0,999) . '.' . $picture->getClientOriginalExtension();
-            Image::make($picture)->resize(500,500)->save( public_path('uploads/speakers/' . $filename) );
+            $path = public_path('uploads/speakers/' . $filename);
+            Image::make($picture->getRealPath())->resize(500,500)->save( $path );
             $speaker->image = $filename;
         }
         $speaker->social = $request->social;
