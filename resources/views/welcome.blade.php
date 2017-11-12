@@ -11,12 +11,12 @@
         </a>
     </div>
     <div class="index-btn col-md-3 col-sm-6 col-xs-12">
-        <a href="{{ url('/schedule') }}" class="overlay waves-effect" id="program">
+        <a href="{{ url('/page/schedule') }}" class="overlay waves-effect" id="program">
             <h1>Програма</h1>
         </a>
     </div>
     <div class="index-btn col-md-3 col-sm-6 col-xs-12">
-        <a href="{{ url('/exhibitors') }}" class="overlay waves-effect" id="exhibitors">
+        <a href="{{ url('/page/exhibitors') }}" class="overlay waves-effect" id="exhibitors">
             <h1>Ьзложители</h1>
         </a>
     </div>

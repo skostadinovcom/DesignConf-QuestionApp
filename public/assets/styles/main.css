@@ -136,6 +136,14 @@ a {
   margin-bottom: 0;
   margin-top: 15px;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DW-Bosk";
+}
 #main-header {
   width: 100%;
   background: #227ed6;
@@ -157,6 +165,10 @@ a {
   padding: 7.5px 0;
 }
 #main-header .container .row .logo a {
+  color: #FFF;
+  line-height: 45px;
+  font-size: 16px;
+  text-decoration: none;
   margin-left: 5px;
 }
 #main-header .container .row .logo a img {
@@ -327,6 +339,7 @@ a {
 }
 #live-element {
   width: 100%;
+  max-height: 100vh;
   padding: 0 25px;
   position: absolute;
   top: 50%;
@@ -355,6 +368,20 @@ a {
   color: #227ed6;
   margin-top: 15px;
 }
+#live-element .sponsors {
+  text-align: center;
+}
+@media screen and (orientation: portrait) {
+  #live-element .live-sponsors {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (orientation: landscape) {
+  #live-element .live-sponsors {
+    height: 100vh;
+  }
+}
 .live {
   background: red;
   color: #FFF;
@@ -369,6 +396,9 @@ a {
 }
 #speakers {
   width: 100%;
+}
+#speakers .speaker {
+  margin-bottom: 10px;
 }
 #speakers .speaker .content {
   position: absolute;

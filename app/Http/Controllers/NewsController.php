@@ -26,7 +26,7 @@ class NewsController extends Controller
      */
     public function admin_index()
     {
-        $news = News::orderBy('id', 'DESC')->get();
+        $news = News::orderBy('id', 'DESC')->where('public', '!=', '2')->get();
         return view('news.admin_index', ['news' => $news]);
     }
 

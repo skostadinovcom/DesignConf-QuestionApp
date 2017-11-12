@@ -1,5 +1,8 @@
 @extends('layouts.app')
+
 @section('page_title', 'Управление на "Стена на живо"')
+@section('prev_link', '')
+@section('prev_title', 'Начало')
 
 @section('content')
     <section id="admin">
@@ -22,12 +25,14 @@
                             <tr>
                                 <th style="padding: 8px 18px;">От</th>
                                 <th>Въпрос</th>
+                                <th>Време</th>
                                 <th>Опции</th>
                             </tr>
                             @foreach( $questions as $question )
                                 <tr class="question-project @if( $question->live == 1 ) live @endif" data-id="{{ $question->id }}">
                                     <td style="padding: 8px 18px;">{{ $question->names }}</td>
                                     <td>{{ $question->question }}</td>
+                                    <td>{{ date('d M Y в H:i', $question->created_at->timestamp) }}</td>
                                     <td>
                                         <a href="javascript:void(0);" class="question-live" style="margin-right: 15px;">Пусни на стената</a>
                                         <a href="#" class="btn-delete question-delete">Изтрий</a>
@@ -38,7 +43,7 @@
                     </div>
                 @else
                     <div class="col-md-12">
-                        <div class="alert alert-info">Няма новини</div>
+                        <div class="alert alert-info">Няма въпроси</div>
                     </div>
                     <div class="clear"></div>
                 @endif

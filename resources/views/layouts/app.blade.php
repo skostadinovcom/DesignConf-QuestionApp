@@ -25,15 +25,31 @@
 
     <script src="{{ asset('tinymce/tinymce.min.js') }}"></script>
     <script>tinymce.init({ selector:'textarea.editor' });</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86402828-5"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-86402828-5');
+    </script>
 </head>
 <body>
     <header id="main-header">
         <div class="container">
             <div class="row">
                 <div class="logo col-xs-6">
-                    <a href="{{ url('/') }}" title="Design Conf">
-                        <img src="{{ asset('assets/img/logo-conf.svg') }}">
-                    </a>
+                    @if( \Request::is('/') )
+                        <a href="{{ url('/') }}" title="Design Conf">
+                            <img src="{{ asset('assets/img/logo-conf.svg') }}">
+                        </a>
+                    @else
+                        <a href="{{ url('/') }}/@yield('prev_link') " title="Design Conf">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i> @yield('prev_title')
+                        </a>
+                    @endif
                 </div>
                 <div class="questions col-xs-6">
                     <i class="fa fa-question" aria-hidden="true"></i>
@@ -61,7 +77,7 @@
     <footer id="main-footer">
         <div class="container">
             <div class="row">
-                <a href="www.skostadinov.eu">Development: Stoyan Kostadinov</a>
+                <a href="http://skostadinov.eu" target="_blank">Development: Stoyan Kostadinov</a>
                 <p>Copyright &copy; Design Weekend {{ date('Y') }}</p>
             </div>
         </div>
@@ -84,6 +100,7 @@
                         <li><a href="{{ url('/') }}">Начало</a></li>
                         <li><a href="{{ url('admin/news') }}">Управление на новини</a></li>
                         <li><a href="{{ url('admin/speakers') }}">Управление на лектори</a></li>
+                        <li><a href="{{ url('admin/pages') }}">Управление на страници</a></li>
                         <li><a href="{{ url('admin/live') }}">Управление на прожекционен екран</a></li>
                         <hr/>
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Изход</a></li>

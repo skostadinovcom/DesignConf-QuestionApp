@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('page_title', $speaker->names)
+@section('prev_link', 'speakers')
+@section('prev_title', 'Лектори')
 
 @section('content')
     <section id="speakers">

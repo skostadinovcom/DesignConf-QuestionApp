@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('page_title', 'Редактиране на новина: ' . $post->title )
+@section('prev_link', 'admin/news')
+@section('prev_title', 'Списък с новини')
 
 @section('content')
     <section id="news">

@@ -108,6 +108,10 @@ a{
 	margin-top: 15px;
 }
 
+h1, h2, h3, h4, h5, h6{
+	font-family: "DW-Bosk";
+}
+
 //Header
 #main-header{
 	width: 100%;
@@ -129,6 +133,10 @@ a{
 				height: 45px;
 				padding: 7.5px 0;
 				a{
+					color: #FFF;
+					line-height: 45px;
+					font-size: 16px;
+					text-decoration: none;
 					margin-left: 5px;
 					img{
 						height: 45px;
@@ -339,6 +347,7 @@ a{
 
 #live-element{
 	width: 100%;
+	max-height: 100vh;
 	padding: 0 25px;
 	position: absolute;
 	top: 50%;
@@ -369,6 +378,27 @@ a{
 		color: @main_color;
 		margin-top: 15px;
 	}
+
+	.sponsors{
+		text-align: center;
+	}
+}
+
+@media screen and (orientation: portrait) {
+	#live-element{
+		.live-sponsors{
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+@media screen and (orientation: landscape) {
+	#live-element{
+		.live-sponsors{
+			height: 100vh;
+		}
+	}
 }
 
 
@@ -388,6 +418,7 @@ a{
 #speakers{
 	width: 100%;
 	.speaker{
+		margin-bottom: 10px; 
 		.content{
 			position: absolute;
 			width: calc(~"100% - 20px");

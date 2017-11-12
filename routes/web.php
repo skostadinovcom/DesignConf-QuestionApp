@@ -56,3 +56,17 @@ Route::group([], function() {
         Route::delete('/speaker/{id}', 'SpeakersController@destroy');
     });
 });
+
+//Custom Pages routes
+Route::group([], function() {
+    Route::get('/page/{url}', 'PagesController@show');
+
+    Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+        Route::get('/pages', 'PagesController@admin_index');
+        Route::get('/page/create', 'PagesController@create');
+        Route::post('/page/', 'PagesController@store');
+        Route::get('/page/{id}', 'PagesController@edit');
+        Route::put('/page/{id}', 'PagesController@update');
+        Route::delete('/page/{id}', 'PagesController@destroy');
+    });
+});

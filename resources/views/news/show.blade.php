@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('page_title', $post->title)
+@section('prev_link', 'news')
+@section('prev_title', 'Новини')
 
 @section('content')
     <section id="news">

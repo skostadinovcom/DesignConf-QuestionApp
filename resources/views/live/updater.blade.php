@@ -9,7 +9,9 @@
     </div>
 @elseif ( $screen->value == 2 )
     <!-- If the screen == 2 -> show sponsors -->
-    //Sponsors
+    <div class="sponsors">
+        <img src="{{ asset('assets/img/guide-sponsors.png') }}" class="live-sponsors">
+    </div>
 @elseif ( $screen->value == 3 )
     <!-- If the screen == 3 -> show CTA -->
     <h1 class="name">Имате въпроси?</h1>

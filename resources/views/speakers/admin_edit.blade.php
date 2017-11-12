@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('page_title', 'Редактиране на лектор: ' . $speaker->names )
+@section('prev_link', 'admin/speakers')
+@section('prev_title', 'Списък с лектори')
 
 @section('content')
     <section id="news">

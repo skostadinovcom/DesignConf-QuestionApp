@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('page_title', 'Смяна на парола')
+@section('prev_link', '')
+@section('prev_title', 'Начало')
 
 @section('content')
 <div class="container">
